@@ -62,7 +62,11 @@ func (this *ContactList) DeleteByEmail(email string) {
 }
 
 func (this *ContactList) DeleteAllByFullName(firstname, lastname string) {
-
+	for i, contact := range this.list {
+		if contact.FirstName == firstname && contact.LastName == lastname {
+			this.list = append(this.list[:i], this.list[i+1:]...)
+		}
+	}
 }
 
 type Task struct {
