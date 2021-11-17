@@ -61,6 +61,10 @@ func (this *ContactList) DeleteByEmail(email string) {
 	this.list = append(this.list[:index], this.list[index+1:]...)
 }
 
+func (this *ContactList) DeleteAllByFullName(firstname, lastname string) {
+
+}
+
 type Task struct {
 	Id        int
 	Name      string
